@@ -42,3 +42,30 @@ The rest of the notebooks require the `classical` environment to be activated. R
 ```python
 conda activate classical
 ```
+## 2a. Datasets
+Download the [NFBS](http://preprocessed-connectomes-project.org/NFB_skullstripped) and [OASIS-2](https://sites.wustl.edu/oasisbrains/home/oasis-2) datasets. Once downloaded, create a folder named `datasets` in the root directory. Organize the folders, downloaded `.tar.gz` files, and metadata in the following structure:
+
+```
+datasets/
+datasets/
+|-- NFBS/
+|---- downloads/
+|------ NFBS_Dataset.tar.gz
+|-- OASIS-2/
+|---- downloads/
+|------ OAS2_RAW_PART1.tar.gz
+|------ OAS2_RAW_PART2.tar.gz
+|------ OAS2_metadata.xlsx
+```
+
+Note that you may need to rename the file and folder names as required.
+
+## 2b. Pre-processing
+To begin the pre-processing, run the following scripts associated with each dataset:
+
+```
+nfbs-preprocessing.ipynb
+```
+```
+oasis-2-preprocessing.ipynb
+```
