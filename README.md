@@ -69,3 +69,35 @@ nfbs-preprocessing.ipynb
 ```
 oasis-2-preprocessing.ipynb
 ```
+
+## 3. Trained Models
+
+We provide pre-trained models for segmentation and generative tasks.
+
+### Segmentation Model
+You can download the segmentation model from the [GitHub Releases v1.0.1](https://github.com/mominul-ssv/alz-cq-cnn/releases/tag/v1.0.1).
+
+### Generative Models
+You can download the generative models from the [GitHub Releases v1.0.0](https://github.com/mominul-ssv/alz-cq-cnn/releases/tag/v1.0.0).
+
+| Model Type | Download Link |
+|------------|---------------|
+| **Axial**  | [Download](https://github.com/mominul-ssv/alz-cq-cnn/releases/download/v1.0.0/oasis-2_axial_gen_model.pt) |
+| **Coronal**| [Download](https://github.com/mominul-ssv/alz-cq-cnn/releases/download/v1.0.0/oasis-2_coronal_gen_model.pt) |
+| **Sagittal**| [Download](https://github.com/mominul-ssv/alz-cq-cnn/releases/download/v1.0.0/oasis-2_sagittal_gen_model.pt) |
+
+## 5. Citation
+```
+@article{islam2025cq,
+  title={CQ CNN: A Hybrid Classical Quantum Convolutional Neural Network for Alzheimer's Disease Detection Using Diffusion Generated and U Net Segmented 3D MRI},
+  author={Islam, Mominul and Hasan, Mohammad Junayed and Mahdy, MRC},
+  journal={arXiv preprint arXiv:2503.02345},
+  year={2025}
+}
+```
+
+## 6. License
+- Copyright © Mominul Islam.
+- ORCID iD: https://orcid.org/0009-0001-6409-964X
+
+
