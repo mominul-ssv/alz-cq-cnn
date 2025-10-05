@@ -1,16 +1,16 @@
-## CQ-CNN: A Hybrid Classical-Quantum Convolutional Neural Network
+## CQ-CNN: A Lightweight Hybrid Classical–Quantum Neural Network
 
 <p align="left">
 <img src="plots/github/qcnn-arch.jpg" alt="image_description" style="padding: 5px" width="100%">
 </p>
 
-<b>CQ-CNN: A Hybrid Classical-Quantum Convolutional Neural Network for Alzheimer’s Disease Detection Using Diffusion-Generated and U-Net Segmented 3D MRI</b>
+<b>CQ-CNN: A lightweight hybrid classical–quantum convolutional neural network for Alzheimer’s disease detection using 3D structural brain MRI</b>
 
 <p>Mominul Islam, Mohammad Junayed Hasan, M.R.C. Mahdy</p>
 
-[https://doi.org/10.48550/arXiv.2503.02345](https://doi.org/10.48550/arXiv.2503.02345)<br>
+[https://doi.org/10.1371/journal.pone.0331870](https://doi.org/10.1371/journal.pone.0331870)<br>
 
-<p>Abstract: <i>The detection of Alzheimer’s disease (AD) from clinical MRI data is an active area of research in medical imaging Recent advances in quantum computing, particularly the integration of parameterized quantum circuits (PQCs) with classical machine learning architectures, offer new opportunities to develop models that may outperform traditional methods. However, quantum machine learning (QML) remains in its early stages and requires further experimental analysis to better understand its behavior and limitations. In this paper, we propose an end-to-end hybrid classical-quantum convolutional neural network (CQ-CNN) for AD detection using clinically formatted 3D MRI data. Our approach involves developing a framework to make 3D MRI data usable for machine learning, designing and training a brain tissue segmentation model (SkullNet), and training a diffusion model to generate synthetic images for the minority class. Our converged models exhibit potential quantum advantages, achieving higher accuracy in fewer epochs than classical models. The proposed 𝛽<sub>8</sub>-3-qubit model achieves an accuracy of 97.50%, surpassing state-of-the-art (SOTA) models while requiring significantly fewer computational resources. In particular, the architecture employs only 13K parameters (0.48 MB), reducing the parameter count by more than 99.99% compared to current SOTA models. Furthermore, the diffusion-generated data used to train our quantum models, in conjunction with real samples, preserve clinical structural standards, representing a notable first in the field of QML. We conclude that CQ-CNN architecture-like models, with further improvements in gradient optimization techniques, could become a viable option and even a potential alternative to classical models for AD detection, especially in data-limited and resource-constrained clinical settings.</i></p>
+<p>Abstract: <i> The automatic detection of Alzheimer’s disease (AD) using 3D volumetric MRI data is a complex, multi-domain challenge that has traditionally been addressed by training classical convolutional neural networks (CNNs). With the rise of quantum computing and its potential to replace classical systems in the future, there is a growing need to: (i) develop automated systems for AD detection that run on quantum computers, (ii) explore the capabilities of current-generation classical-quantum architectures, and (iii) identify their potential limitations and advantages. To reduce the complexity of multi-domain expertise while addressing the emerging demands of quantum-based automated systems, our contribution in this paper is twofold. First, we introduce a simple preprocessing framework that converts 3D MRI volumetric data into 2D slices. Second, we propose CQ-CNN, a parameterized quantum circuit (PQC)-based lightweight hybrid classical-quantum convolutional neural network that leverages the computational capabilities of both classical and quantum systems. Our experiments on the OASIS-2 dataset reveal a significant limitation in current hybrid classical-quantum architectures, as they face difficulties con verging when class images are highly similar, such as between moderate dementia and non-dementia classes of AD, which leads to gradient failure and optimization stagnation. However, when convergence is achieved, the quantum model demonstrates a promising quantum advantage by attaining state-of-the-art accuracy with far fewer parameters than classical models. For instance, our 𝛽<sub>8</sub>-3-qubit model achieves 97.5% accuracy using only 13.7K parameters (0.05 MB), which is 5.67% higher than a classical model with the same parameter count. Nevertheless, our results highlight the need for improved quantum optimization methods to support the practical deployment of hybrid classical-quantum models in AD detection and related medical imaging tasks.</i></p>
 
 ## 1a. Dependency Setup
 
@@ -75,15 +75,15 @@ datasets/
 
 Make sure to rename the files and folders as needed.
 
-## 2c. Preprocessing NFBS and Training SkullNet
+## 2c. Preprocessing NFBS and Training the Segmentation Model
 
-To train the **SkullNet** segmentation model, start by preprocessing the NFBS dataset. This process converts the 3D MRI data into 2D images. Run the following script for preprocessing:
+To train the segmentation model, start by preprocessing the NFBS dataset. This process converts the 3D MRI data into 2D images. Run the following script for preprocessing:
 
 ```
 nfbs-preprocessing.ipynb
 ```
 
-After preprocessing, proceed to train the **SkullNet** segmentation model with the following script:
+After preprocessing, proceed to train the segmentation model with the following script:
 
 ```
 nfbs-unet-train.ipynb
@@ -127,7 +127,7 @@ Next, run the following script to create the final balanced variations of the da
 oasis-2-eda-and-pruning.ipynb
 ```
 
-Finally, use **SkullNet** to generate segmented variations of the OASIS-2 dataset by running:
+Finally, use the segmentation model to generate variations of the OASIS-2 dataset by running:
 
 ```
 oasis-2-skullstrip.ipynb
@@ -162,25 +162,34 @@ scripts/
 |------ ...
 |---- classical/
 |------ ...
+|---- classical-sota/
+|------ ...
+|---- control/
+|------ ...
 ```
 
 ## 4. Performance Evaluation
 
-For an in-depth analysis of our experiments, including segmentation, generative, and classification models, run the following scripts:
+For an in-depth analysis of our experiments, run the following scripts:
 
 ```
 model-segmentation-eda.ipynb
 model-generative-eda.ipynb
 model-classification-eda.ipynb
+model-classification-control-eda.ipynb
 ```
 
 ## 5. Citation
 ```
 @article{islam2025cq,
-  title={CQ CNN: A Hybrid Classical Quantum Convolutional Neural Network for Alzheimer's Disease Detection Using Diffusion Generated and U Net Segmented 3D MRI},
+  title={CQ-CNN: A lightweight hybrid classical--quantum convolutional neural network for Alzheimer’s disease detection using 3D structural brain MRI},
   author={Islam, Mominul and Hasan, Mohammad Junayed and Mahdy, MRC},
-  journal={arXiv preprint arXiv:2503.02345},
-  year={2025}
+  journal={PloS one},
+  volume={20},
+  number={9},
+  pages={e0331870},
+  year={2025},
+  publisher={Public Library of Science San Francisco, CA USA}
 }
 ```
 
